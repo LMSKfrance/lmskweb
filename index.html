@@ -342,6 +342,37 @@
       color: var(--bg-light);
     }
 
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 8px;
+      padding-left: 20px;
+      border-left: 1px solid var(--muted);
+    }
+
+    .lang-btn {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--bg-dark);
+      opacity: 0.35;
+      padding: 4px 6px;
+      transition: opacity 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      opacity: 0.7;
+    }
+
+    .lang-btn.is-active {
+      opacity: 1;
+    }
+
     .sec-hero {
       min-height: 100vh;
       padding-top: calc(var(--header-height) + 2vw);
@@ -893,9 +924,14 @@
     </svg>
 
     <nav class="header-nav">
-      <a href="#sec-services">Work</a>
-      <a href="#sec-timeline">Process</a>
-      <a href="#diagnostic" class="header-cta">Book a diagnostic</a>
+      <a href="#sec-services" data-i18n="nav_work">Work</a>
+      <a href="#sec-timeline" data-i18n="nav_process">Process</a>
+      <a href="#diagnostic" class="header-cta" data-i18n="nav_book">Book a diagnostic</a>
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn is-active" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+      </div>
     </nav>
   </header>
 
@@ -905,20 +941,20 @@
       <div class="sys-meta meta-top-right">[SYS: INIT] / COORD: 48.8566° N</div>
 
       <div class="grid hero-content">
-        <h1 class="hero-headline parallax-container" data-speed="0.9">
+        <h1 class="hero-headline parallax-container" data-speed="0.9" data-i18n-html="hero_headline">
           We design and build digital systems that support
           <span style="color:var(--accent)">trust, conversion</span> and
           <span style="color:var(--accent)">growth.</span>
         </h1>
 
         <div class="hero-bottom parallax-container" data-speed="1.0">
-          <p class="text-body">
+          <p class="text-body" data-i18n="hero_body">
            LMSK designs and builds websites, client systems and operational tools for high-trust businesses and established brands.
           </p>
           <div>
-            <a href="#diagnostic" class="btn">Book a diagnostic</a>
+            <a href="#diagnostic" class="btn" data-i18n="hero_cta">Book a diagnostic</a>
           </div>
-          <p class="text-mono" style="color:#666;">Focused, senior and built around real business use.</p>
+          <p class="text-mono" style="color:#666;" data-i18n="hero_tagline">Focused, senior and built around real business use.</p>
         </div>
       </div>
     </section>
@@ -926,8 +962,8 @@
     <section class="theme-dark sec-manifesto">
       <div class="grid">
         <div class="manifesto-text reveal-up">
-          <div class="manifesto-line-1">Not a volume agency.<br />Not a generic shop.</div>
-          <div class="manifesto-line-2">
+          <div class="manifesto-line-1" data-i18n-html="manifesto_line1">Not a volume agency.<br />Not a generic shop.</div>
+          <div class="manifesto-line-2" data-i18n="manifesto_line2">
             A senior digital partner for clearer positioning, stronger systems and better outcomes.
           </div>
         </div>
@@ -936,35 +972,35 @@
 
     <section>
       <div class="grid">
-        <div class="text-mono section-label">What this solves — 02</div>
-        <div class="text-body-large solve-intro reveal-up">
+        <div class="text-mono section-label" data-i18n="s02_label">What this solves — 02</div>
+        <div class="text-body-large solve-intro reveal-up" data-i18n="s02_intro">
           The value is not only in what gets built. It is in what becomes clearer, faster and easier after.
         </div>
 
         <div class="service-row border-t reveal-up">
-          <div class="service-title">1. Weak digital trust</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s02_t1">1. Weak digital trust</div>
+          <div class="service-desc text-body" data-i18n="s02_d1">
             For high-value services, weak presentation creates hesitation before a conversation even starts.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.1s;">
-          <div class="service-title">2. Unclear offers</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s02_t2">2. Unclear offers</div>
+          <div class="service-desc text-body" data-i18n="s02_d2">
             If services are hard to understand online, good prospects delay, compare or drop off.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.2s;">
-          <div class="service-title">3. Too much manual follow-up</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s02_t3">3. Too much manual follow-up</div>
+          <div class="service-desc text-body" data-i18n="s02_d3">
             Repeated explanations, project updates and document preparation consume time that should not stay manual.
           </div>
         </div>
 
         <div class="service-row border-t border-b reveal-up" style="transition-delay:0.3s;">
-          <div class="service-title">4. Low visibility during delivery</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s02_t4">4. Low visibility during delivery</div>
+          <div class="service-desc text-body" data-i18n="s02_d4">
             When clients cannot clearly see what is happening, trust drops and communication load increases.
           </div>
         </div>
@@ -973,49 +1009,49 @@
 
     <section id="sec-services">
       <div class="grid">
-        <div class="text-mono section-label">What we do — 03</div>
-        <div class="text-body-large services-intro reveal-up">
+        <div class="text-mono section-label" data-i18n="s03_label">What we do — 03</div>
+        <div class="text-body-large services-intro reveal-up" data-i18n="s03_intro">
           We work on the digital layer around a business: how it is seen, how it is understood, how people interact with it and how teams use it internally.
         </div>
 
         <div class="service-row border-t reveal-up">
-          <div class="service-title">1. Web design and conversion structure</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t1">1. Web design and conversion structure</div>
+          <div class="service-desc text-body" data-i18n="s03_d1">
             Websites built to improve clarity, trust and decision-making for high-consideration services.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.1s;">
-          <div class="service-title">2. Brand systems and digital identity</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t2">2. Brand systems and digital identity</div>
+          <div class="service-desc text-body" data-i18n="s03_d2">
             Visual and structural systems that make a business look as credible as it actually is.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.2s;">
-          <div class="service-title">3. Digital products and client systems</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t3">3. Digital products and client systems</div>
+          <div class="service-desc text-body" data-i18n="s03_d3">
             Quote generators, dashboards, document automation and tracking tools built to reduce friction, improve visibility and support better delivery.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.3s;">
-          <div class="service-title">4. Social media systems and campaign assets</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t4">4. Social media systems and campaign assets</div>
+          <div class="service-desc text-body" data-i18n="s03_d4">
             Structured content systems that strengthen digital presence, consistency and trust over time.
           </div>
         </div>
 
         <div class="service-row border-t reveal-up" style="transition-delay:0.4s;">
-          <div class="service-title">5. Video production and motion content</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t5">5. Video production and motion content</div>
+          <div class="service-desc text-body" data-i18n="s03_d5">
             Brand, product and case-study video designed to explain offers more clearly and support confidence.
           </div>
         </div>
 
         <div class="service-row border-t border-b reveal-up" style="transition-delay:0.5s;">
-          <div class="service-title">6. Automation and workflow support</div>
-          <div class="service-desc text-body">
+          <div class="service-title" data-i18n="s03_t6">6. Automation and workflow support</div>
+          <div class="service-desc text-body" data-i18n="s03_d6">
             Connected systems that reduce manual work across sales, service and follow-up.
           </div>
         </div>
@@ -1024,30 +1060,30 @@
 
     <section class="theme-dark">
       <div class="grid">
-        <div class="text-mono section-label">Why LMSK — 04</div>
+        <div class="text-mono section-label" data-i18n="s04_label">Why LMSK — 04</div>
 
         <div class="why-intro-container">
-          <div class="why-para text-body reveal-up">We do not separate design from operational logic.</div>
-          <div class="why-para text-body reveal-up" style="transition-delay:0.1s;">
+          <div class="why-para text-body reveal-up" data-i18n="s04_p1">We do not separate design from operational logic.</div>
+          <div class="why-para text-body reveal-up" style="transition-delay:0.1s;" data-i18n="s04_p2">
             The work is not only about how something looks. It is about how a company is understood online, how trust is built and how internal tools support better execution.
           </div>
-          <div class="why-para text-body reveal-up" style="transition-delay:0.2s;">
+          <div class="why-para text-body reveal-up" style="transition-delay:0.2s;" data-i18n="s04_p3">
             That is why the output can be a website, a dashboard, an automation layer, a document system or a clearer client experience end to end.
           </div>
         </div>
 
         <div class="why-proofs">
           <div class="proof-col reveal-up" style="transition-delay:0.3s;">
-            <div class="text-mono proof-label">Senior</div>
-            <div class="text-body">Direct work with experienced founders.</div>
+            <div class="text-mono proof-label" data-i18n="s04_proof1_label">Senior</div>
+            <div class="text-body" data-i18n="s04_proof1_desc">Direct work with experienced founders.</div>
           </div>
           <div class="proof-col reveal-up" style="transition-delay:0.42s;">
-            <div class="text-mono proof-label">Structured</div>
-            <div class="text-body">Clear scope, clear logic and clear decisions.</div>
+            <div class="text-mono proof-label" data-i18n="s04_proof2_label">Structured</div>
+            <div class="text-body" data-i18n="s04_proof2_desc">Clear scope, clear logic and clear decisions.</div>
           </div>
           <div class="proof-col reveal-up" style="transition-delay:0.54s;">
-            <div class="text-mono proof-label">Product-minded</div>
-            <div class="text-body">Built around use, flow and performance — not decoration.</div>
+            <div class="text-mono proof-label" data-i18n="s04_proof3_label">Product-minded</div>
+            <div class="text-body" data-i18n="s04_proof3_desc">Built around use, flow and performance — not decoration.</div>
           </div>
         </div>
       </div>
@@ -1055,7 +1091,7 @@
 
     <section>
       <div class="grid">
-        <div class="text-mono section-label">Selected work — 05</div>
+        <div class="text-mono section-label" data-i18n="s05_label">Selected work — 05</div>
 
         <article class="work-row border-t">
           <img
@@ -1067,9 +1103,9 @@
           <div class="work-metric-col parallax-container" data-speed="0.7">
             <div class="work-metric">ARC</div>
             <div class="work-desc">
-              <div class="text-mono">Crypto Trading Platform</div>
-              <div class="text-body-large"><strong>Product clarity for a trust-sensitive environment</strong></div>
-              <div class="text-body">
+              <div class="text-mono" data-i18n="work1_type">Crypto Trading Platform</div>
+              <div class="text-body-large"><strong data-i18n="work1_headline">Product clarity for a trust-sensitive environment</strong></div>
+              <div class="text-body" data-i18n="work1_desc">
                 Designed a clearer and more structured platform experience to support confidence, usability and better decision-making.
               </div>
             </div>
@@ -1087,9 +1123,9 @@
           <div class="work-metric-col parallax-container" data-speed="0.7">
             <div class="work-metric">AG Legal Georgia</div>
             <div class="work-desc">
-              <div class="text-mono">Branding & Website</div>
-              <div class="text-body-large"><strong>A stronger digital presence for an established practice</strong></div>
-              <div class="text-body">
+              <div class="text-mono" data-i18n="work2_type">Branding & Website</div>
+              <div class="text-body-large"><strong data-i18n="work2_headline">A stronger digital presence for an established practice</strong></div>
+              <div class="text-body" data-i18n="work2_desc">
                 Rebuilt the firm’s visual and digital presence to better reflect credibility, experience and client trust.
               </div>
             </div>
@@ -1107,9 +1143,9 @@
           <div class="work-metric-col parallax-container" data-speed="0.7">
             <div class="work-metric">Econome</div>
             <div class="work-desc">
-              <div class="text-mono">Expense Tracking</div>
-              <div class="text-body-large"><strong>Simpler visibility and control for financial workflows</strong></div>
-              <div class="text-body">
+              <div class="text-mono" data-i18n="work3_type">Expense Tracking</div>
+              <div class="text-body-large"><strong data-i18n="work3_headline">Simpler visibility and control for financial workflows</strong></div>
+              <div class="text-body" data-i18n="work3_desc">
                 Designed a clearer expense experience to improve reporting, usability and day-to-day control.
               </div>
             </div>
@@ -1121,14 +1157,14 @@
 
     <section class="theme-dark">
       <div class="grid">
-        <div class="text-mono section-label">Digital systems we build — 06</div>
+        <div class="text-mono section-label" data-i18n="s06_label">Digital systems we build — 06</div>
 
         <div class="system-cards">
           <div class="system-card reveal-up">
             <div class="text-mono">01</div>
             <div>
-              <div class="system-name">Automatic document generation</div>
-              <div class="text-body">
+              <div class="system-name" data-i18n="sys1_name">Automatic document generation</div>
+              <div class="text-body" data-i18n="sys1_desc">
                 Reduce repeated manual admin with faster quotes, summaries and client documents.
               </div>
             </div>
@@ -1137,8 +1173,8 @@
           <div class="system-card reveal-up" style="transition-delay:0.1s;">
             <div class="text-mono">02</div>
             <div>
-              <div class="system-name">Client dashboards and tracking</div>
-              <div class="text-body">
+              <div class="system-name" data-i18n="sys2_name">Client dashboards and tracking</div>
+              <div class="text-body" data-i18n="sys2_desc">
                 Give clients a clear view of what is in progress, what is done and what comes next.
               </div>
             </div>
@@ -1147,8 +1183,8 @@
           <div class="system-card reveal-up" style="transition-delay:0.2s;">
             <div class="text-mono">03</div>
             <div>
-              <div class="system-name">Operational tools and internal workflows</div>
-              <div class="text-body">
+              <div class="system-name" data-i18n="sys3_name">Operational tools and internal workflows</div>
+              <div class="text-body" data-i18n="sys3_desc">
                 Reduce friction across delivery, communication and follow-up.
               </div>
             </div>
@@ -1157,8 +1193,8 @@
           <div class="system-card reveal-up" style="transition-delay:0.3s;">
             <div class="text-mono">04</div>
             <div>
-              <div class="system-name">Portals and service interfaces</div>
-              <div class="text-body">
+              <div class="system-name" data-i18n="sys4_name">Portals and service interfaces</div>
+              <div class="text-body" data-i18n="sys4_desc">
                 Improve visibility, trust and day-to-day coordination through better client-facing systems.
               </div>
             </div>
@@ -1169,8 +1205,8 @@
 
     <section class="sec-timeline" id="sec-timeline">
       <div class="grid">
-        <div class="text-mono section-label">How we work — 07</div>
-        <div class="text-body-large timeline-intro reveal-up">
+        <div class="text-mono section-label" data-i18n="s07_label">How we work — 07</div>
+        <div class="text-body-large timeline-intro reveal-up" data-i18n="s07_intro">
           Direct, structured and focused on what moves things forward.
         </div>
 
@@ -1181,32 +1217,32 @@
           <div class="timeline-step reveal-up">
             <div class="step-num-bg">01</div>
             <div class="step-content">
-              <div class="step-label">Understand</div>
-              <div class="text-body">We look at the business, the digital presence and the friction points.</div>
+              <div class="step-label" data-i18n="step1_label">Understand</div>
+              <div class="text-body" data-i18n="step1_desc">We look at the business, the digital presence and the friction points.</div>
             </div>
           </div>
 
           <div class="timeline-step reveal-up">
             <div class="step-num-bg">02</div>
             <div class="step-content">
-              <div class="step-label">Frame</div>
-              <div class="text-body">We define the right response: website, product layer or system redesign.</div>
+              <div class="step-label" data-i18n="step2_label">Frame</div>
+              <div class="text-body" data-i18n="step2_desc">We define the right response: website, product layer or system redesign.</div>
             </div>
           </div>
 
           <div class="timeline-step reveal-up">
             <div class="step-num-bg">03</div>
             <div class="step-content">
-              <div class="step-label">Design and build</div>
-              <div class="text-body">We turn that into something usable, credible and operationally relevant.</div>
+              <div class="step-label" data-i18n="step3_label">Design and build</div>
+              <div class="text-body" data-i18n="step3_desc">We turn that into something usable, credible and operationally relevant.</div>
             </div>
           </div>
 
           <div class="timeline-step reveal-up">
             <div class="step-num-bg">04</div>
             <div class="step-content">
-              <div class="step-label">Refine</div>
-              <div class="text-body">Once the foundation is right, we improve what matters next.</div>
+              <div class="step-label" data-i18n="step4_label">Refine</div>
+              <div class="text-body" data-i18n="step4_desc">Once the foundation is right, we improve what matters next.</div>
             </div>
           </div>
         </div>
@@ -1215,29 +1251,29 @@
 
     <section class="theme-dark">
       <div class="grid">
-        <div class="text-mono section-label">Built for technical sectors — 08</div>
-        <div class="text-body-large industry-intro reveal-up">
+        <div class="text-mono section-label" data-i18n="s08_label">Built for technical sectors — 08</div>
+        <div class="text-body-large industry-intro reveal-up" data-i18n="s08_intro">
           LMSK works best with companies whose services are complex, high-trust and poorly served by generic digital templates.
         </div>
 
         <div class="industry-cols">
           <div class="ind-col reveal-up">
-            <div class="ind-label">Energy</div>
-            <div class="text-body">
+            <div class="ind-label" data-i18n="ind1_label">Energy</div>
+            <div class="text-body" data-i18n="ind1_desc">
               Digital systems that support trust, clarity and action around major decisions.
             </div>
           </div>
 
           <div class="ind-col reveal-up" style="transition-delay:0.1s;">
-            <div class="ind-label">Construction</div>
-            <div class="text-body">
+            <div class="ind-label" data-i18n="ind2_label">Construction</div>
+            <div class="text-body" data-i18n="ind2_desc">
               Stronger digital credibility where process and reliability must be visible.
             </div>
           </div>
 
           <div class="ind-col reveal-up" style="transition-delay:0.2s;">
-            <div class="ind-label">Industry</div>
-            <div class="text-body">
+            <div class="ind-label" data-i18n="ind3_label">Industry</div>
+            <div class="text-body" data-i18n="ind3_desc">
               Structured interfaces built with precision, logic and restraint.
             </div>
           </div>
@@ -1247,8 +1283,8 @@
 
     <section>
       <div class="grid">
-        <div class="text-mono section-label">Founded by practitioners — 09</div>
-        <div class="text-body-large founders-intro reveal-up">
+        <div class="text-mono section-label" data-i18n="s09_label">Founded by practitioners — 09</div>
+        <div class="text-body-large founders-intro reveal-up" data-i18n="s09_intro">
           LMSK is led by two founders with complementary strengths across product, design and execution.
         </div>
 
@@ -1262,8 +1298,8 @@
             />
             <div class="parallax-container" data-speed="1.0">
               <div class="founder-name">Lise Messai</div>
-              <div class="text-mono founder-title">Co-Founder</div>
-              <div class="text-body">
+              <div class="text-mono founder-title" data-i18n="founder1_title">Co-Founder</div>
+              <div class="text-body" data-i18n="founder1_desc">
                 Creative Director working across structure, visual consistency and delivery.
               </div>
             </div>
@@ -1278,8 +1314,8 @@
             />
             <div class="parallax-container" data-speed="1.0">
               <div class="founder-name">Sandro Kozmanishvili</div>
-              <div class="text-mono founder-title">Co-Founder</div>
-              <div class="text-body">
+              <div class="text-mono founder-title" data-i18n="founder2_title">Co-Founder</div>
+              <div class="text-body" data-i18n="founder2_desc">
                 Senior Product Designer with 10+ years across agency, fintech and service-company environments.
               </div>
             </div>
@@ -1290,27 +1326,27 @@
 
     <section class="theme-dark">
       <div class="grid">
-        <div class="text-mono section-label">What clients value — 10</div>
+        <div class="text-mono section-label" data-i18n="s10_label">What clients value — 10</div>
 
         <div class="principles-grid">
           <div class="principle-col reveal-up">
-            <div class="principle-label">Clarity<span>:</span></div>
-            <div class="text-body">Clear thinking, clear structure and clear outputs.</div>
+            <div class="principle-label" data-i18n-html="principle1_label">Clarity<span>:</span></div>
+            <div class="text-body" data-i18n="principle1_desc">Clear thinking, clear structure and clear outputs.</div>
           </div>
 
           <div class="principle-col reveal-up" style="transition-delay:0.1s;">
-            <div class="principle-label">Precision<span>:</span></div>
-            <div class="text-body">Work grounded in logic, not noise.</div>
+            <div class="principle-label" data-i18n-html="principle2_label">Precision<span>:</span></div>
+            <div class="text-body" data-i18n="principle2_desc">Work grounded in logic, not noise.</div>
           </div>
 
           <div class="principle-col reveal-up" style="transition-delay:0.2s;">
-            <div class="principle-label">Accountability<span>:</span></div>
-            <div class="text-body">Direct collaboration and visible progress.</div>
+            <div class="principle-label" data-i18n-html="principle3_label">Accountability<span>:</span></div>
+            <div class="text-body" data-i18n="principle3_desc">Direct collaboration and visible progress.</div>
           </div>
 
           <div class="principle-col reveal-up" style="transition-delay:0.3s;">
-            <div class="principle-label">Relevance<span>:</span></div>
-            <div class="text-body">Digital work tied to real operational needs, not agency theatre.</div>
+            <div class="principle-label" data-i18n-html="principle4_label">Relevance<span>:</span></div>
+            <div class="text-body" data-i18n="principle4_desc">Digital work tied to real operational needs, not agency theatre.</div>
           </div>
         </div>
       </div>
@@ -1319,12 +1355,12 @@
     <section class="sec-final" id="diagnostic">
       <div class="grid" style="width:100%;">
         <div class="final-content reveal-up">
-          <h2 class="final-headline">Start with a focused diagnostic</h2>
-          <div class="final-body text-body">
+          <h2 class="final-headline" data-i18n="final_headline">Start with a focused diagnostic</h2>
+          <div class="final-body text-body" data-i18n="final_body">
             A direct first conversation to identify where stronger digital systems can create the most value.
           </div>
-          <a href="https://calendly.com/kozmanishvili/30min" class="btn">Book a diagnostic</a>
-          <div class="text-mono" style="color:#666;">Clarity first. Direction next.</div>
+          <a href="https://calendly.com/kozmanishvili/30min" class="btn" data-i18n="final_cta">Book a diagnostic</a>
+          <div class="text-mono" style="color:#666;" data-i18n="final_tagline">Clarity first. Direction next.</div>
         </div>
       </div>
     </section>
@@ -1336,6 +1372,350 @@
   </footer>
 
   <script>
+    // ── i18n ──────────────────────────────────────────────────────────────────
+    const translations = {
+      en: {
+        nav_work: "Work",
+        nav_process: "Process",
+        nav_book: "Book a diagnostic",
+        hero_headline: 'We design and build digital systems that support\n<span style="color:var(--accent)">trust, conversion</span> and\n<span style="color:var(--accent)">growth.</span>',
+        hero_body: "LMSK designs and builds websites, client systems and operational tools for high-trust businesses and established brands.",
+        hero_cta: "Book a diagnostic",
+        hero_tagline: "Focused, senior and built around real business use.",
+        manifesto_line1: "Not a volume agency.<br />Not a generic shop.",
+        manifesto_line2: "A senior digital partner for clearer positioning, stronger systems and better outcomes.",
+        s02_label: "What this solves — 02",
+        s02_intro: "The value is not only in what gets built. It is in what becomes clearer, faster and easier after.",
+        s02_t1: "1. Weak digital trust",
+        s02_d1: "For high-value services, weak presentation creates hesitation before a conversation even starts.",
+        s02_t2: "2. Unclear offers",
+        s02_d2: "If services are hard to understand online, good prospects delay, compare or drop off.",
+        s02_t3: "3. Too much manual follow-up",
+        s02_d3: "Repeated explanations, project updates and document preparation consume time that should not stay manual.",
+        s02_t4: "4. Low visibility during delivery",
+        s02_d4: "When clients cannot clearly see what is happening, trust drops and communication load increases.",
+        s03_label: "What we do — 03",
+        s03_intro: "We work on the digital layer around a business: how it is seen, how it is understood, how people interact with it and how teams use it internally.",
+        s03_t1: "1. Web design and conversion structure",
+        s03_d1: "Websites built to improve clarity, trust and decision-making for high-consideration services.",
+        s03_t2: "2. Brand systems and digital identity",
+        s03_d2: "Visual and structural systems that make a business look as credible as it actually is.",
+        s03_t3: "3. Digital products and client systems",
+        s03_d3: "Quote generators, dashboards, document automation and tracking tools built to reduce friction, improve visibility and support better delivery.",
+        s03_t4: "4. Social media systems and campaign assets",
+        s03_d4: "Structured content systems that strengthen digital presence, consistency and trust over time.",
+        s03_t5: "5. Video production and motion content",
+        s03_d5: "Brand, product and case-study video designed to explain offers more clearly and support confidence.",
+        s03_t6: "6. Automation and workflow support",
+        s03_d6: "Connected systems that reduce manual work across sales, service and follow-up.",
+        s04_label: "Why LMSK — 04",
+        s04_p1: "We do not separate design from operational logic.",
+        s04_p2: "The work is not only about how something looks. It is about how a company is understood online, how trust is built and how internal tools support better execution.",
+        s04_p3: "That is why the output can be a website, a dashboard, an automation layer, a document system or a clearer client experience end to end.",
+        s04_proof1_label: "Senior",
+        s04_proof1_desc: "Direct work with experienced founders.",
+        s04_proof2_label: "Structured",
+        s04_proof2_desc: "Clear scope, clear logic and clear decisions.",
+        s04_proof3_label: "Product-minded",
+        s04_proof3_desc: "Built around use, flow and performance — not decoration.",
+        s05_label: "Selected work — 05",
+        work1_type: "Crypto Trading Platform",
+        work1_headline: "Product clarity for a trust-sensitive environment",
+        work1_desc: "Designed a clearer and more structured platform experience to support confidence, usability and better decision-making.",
+        work2_type: "Branding & Website",
+        work2_headline: "A stronger digital presence for an established practice",
+        work2_desc: "Rebuilt the firm's visual and digital presence to better reflect credibility, experience and client trust.",
+        work3_type: "Expense Tracking",
+        work3_headline: "Simpler visibility and control for financial workflows",
+        work3_desc: "Designed a clearer expense experience to improve reporting, usability and day-to-day control.",
+        s06_label: "Digital systems we build — 06",
+        sys1_name: "Automatic document generation",
+        sys1_desc: "Reduce repeated manual admin with faster quotes, summaries and client documents.",
+        sys2_name: "Client dashboards and tracking",
+        sys2_desc: "Give clients a clear view of what is in progress, what is done and what comes next.",
+        sys3_name: "Operational tools and internal workflows",
+        sys3_desc: "Reduce friction across delivery, communication and follow-up.",
+        sys4_name: "Portals and service interfaces",
+        sys4_desc: "Improve visibility, trust and day-to-day coordination through better client-facing systems.",
+        s07_label: "How we work — 07",
+        s07_intro: "Direct, structured and focused on what moves things forward.",
+        step1_label: "Understand",
+        step1_desc: "We look at the business, the digital presence and the friction points.",
+        step2_label: "Frame",
+        step2_desc: "We define the right response: website, product layer or system redesign.",
+        step3_label: "Design and build",
+        step3_desc: "We turn that into something usable, credible and operationally relevant.",
+        step4_label: "Refine",
+        step4_desc: "Once the foundation is right, we improve what matters next.",
+        s08_label: "Built for technical sectors — 08",
+        s08_intro: "LMSK works best with companies whose services are complex, high-trust and poorly served by generic digital templates.",
+        ind1_label: "Energy",
+        ind1_desc: "Digital systems that support trust, clarity and action around major decisions.",
+        ind2_label: "Construction",
+        ind2_desc: "Stronger digital credibility where process and reliability must be visible.",
+        ind3_label: "Industry",
+        ind3_desc: "Structured interfaces built with precision, logic and restraint.",
+        s09_label: "Founded by practitioners — 09",
+        s09_intro: "LMSK is led by two founders with complementary strengths across product, design and execution.",
+        founder1_title: "Co-Founder",
+        founder1_desc: "Creative Director working across structure, visual consistency and delivery.",
+        founder2_title: "Co-Founder",
+        founder2_desc: "Senior Product Designer with 10+ years across agency, fintech and service-company environments.",
+        s10_label: "What clients value — 10",
+        principle1_label: "Clarity<span>:</span>",
+        principle1_desc: "Clear thinking, clear structure and clear outputs.",
+        principle2_label: "Precision<span>:</span>",
+        principle2_desc: "Work grounded in logic, not noise.",
+        principle3_label: "Accountability<span>:</span>",
+        principle3_desc: "Direct collaboration and visible progress.",
+        principle4_label: "Relevance<span>:</span>",
+        principle4_desc: "Digital work tied to real operational needs, not agency theatre.",
+        final_headline: "Start with a focused diagnostic",
+        final_body: "A direct first conversation to identify where stronger digital systems can create the most value.",
+        final_cta: "Book a diagnostic",
+        final_tagline: "Clarity first. Direction next.",
+      },
+      fr: {
+        nav_work: "Travaux",
+        nav_process: "Processus",
+        nav_book: "Prendre rendez-vous",
+        hero_headline: 'Nous concevons et développons des systèmes digitaux pour\n<span style="color:var(--accent)">la confiance, la conversion</span> et\n<span style="color:var(--accent)">la croissance.</span>',
+        hero_body: "LMSK conçoit et développe des sites web, des systèmes clients et des outils opérationnels pour les entreprises de confiance et les marques établies.",
+        hero_cta: "Prendre rendez-vous",
+        hero_tagline: "Focalisé, senior et centré sur les réels besoins métier.",
+        manifesto_line1: "Pas une agence de volume.<br />Pas une boutique générique.",
+        manifesto_line2: "Un partenaire digital senior pour un positionnement plus clair, des systèmes plus solides et de meilleurs résultats.",
+        s02_label: "Ce que cela résout — 02",
+        s02_intro: "La valeur ne réside pas seulement dans ce qui est construit. Elle est dans ce qui devient plus clair, plus rapide et plus simple après.",
+        s02_t1: "1. Faible confiance digitale",
+        s02_d1: "Pour les services à haute valeur ajoutée, une présentation faible crée des hésitations avant même qu'une conversation ne commence.",
+        s02_t2: "2. Offres floues",
+        s02_d2: "Si les services sont difficiles à comprendre en ligne, les bons prospects tardent, comparent ou abandonnent.",
+        s02_t3: "3. Trop de suivi manuel",
+        s02_d3: "Les explications répétées, les mises à jour de projet et la préparation de documents consomment du temps qui ne devrait pas rester manuel.",
+        s02_t4: "4. Visibilité insuffisante pendant la livraison",
+        s02_d4: "Quand les clients ne voient pas clairement ce qui se passe, la confiance diminue et la charge de communication augmente.",
+        s03_label: "Ce que nous faisons — 03",
+        s03_intro: "Nous travaillons sur la couche digitale autour d'une entreprise : comment elle est vue, comment elle est comprise, comment les gens interagissent avec elle et comment les équipes l'utilisent en interne.",
+        s03_t1: "1. Design web et structure de conversion",
+        s03_d1: "Des sites web conçus pour améliorer la clarté, la confiance et la prise de décision pour les services à forte considération.",
+        s03_t2: "2. Systèmes de marque et identité digitale",
+        s03_d2: "Des systèmes visuels et structurels qui font paraître une entreprise aussi crédible qu'elle l'est réellement.",
+        s03_t3: "3. Produits digitaux et systèmes clients",
+        s03_d3: "Générateurs de devis, tableaux de bord, automatisation documentaire et outils de suivi pour réduire les frictions, améliorer la visibilité et soutenir une meilleure livraison.",
+        s03_t4: "4. Systèmes de médias sociaux et supports de campagne",
+        s03_d4: "Des systèmes de contenu structurés qui renforcent la présence digitale, la cohérence et la confiance au fil du temps.",
+        s03_t5: "5. Production vidéo et contenu animé",
+        s03_d5: "Des vidéos de marque, produit et étude de cas pour expliquer les offres plus clairement et renforcer la confiance.",
+        s03_t6: "6. Automatisation et support des processus",
+        s03_d6: "Des systèmes connectés qui réduisent le travail manuel dans les ventes, le service et le suivi.",
+        s04_label: "Pourquoi LMSK — 04",
+        s04_p1: "Nous ne séparons pas le design de la logique opérationnelle.",
+        s04_p2: "Le travail ne porte pas seulement sur l'apparence. Il porte sur la façon dont une entreprise est comprise en ligne, comment la confiance se construit et comment les outils internes soutiennent une meilleure exécution.",
+        s04_p3: "C'est pourquoi le résultat peut être un site web, un tableau de bord, une couche d'automatisation, un système documentaire ou une expérience client plus claire de bout en bout.",
+        s04_proof1_label: "Senior",
+        s04_proof1_desc: "Travail direct avec des fondateurs expérimentés.",
+        s04_proof2_label: "Structuré",
+        s04_proof2_desc: "Périmètre clair, logique claire et décisions claires.",
+        s04_proof3_label: "Orienté produit",
+        s04_proof3_desc: "Construit autour de l'usage, du flux et de la performance — pas de la décoration.",
+        s05_label: "Travaux sélectionnés — 05",
+        work1_type: "Plateforme de trading crypto",
+        work1_headline: "Clarté produit pour un environnement sensible à la confiance",
+        work1_desc: "Conception d'une expérience de plateforme plus claire et plus structurée pour soutenir la confiance, l'utilisabilité et une meilleure prise de décision.",
+        work2_type: "Branding & Site Web",
+        work2_headline: "Une présence digitale plus forte pour un cabinet établi",
+        work2_desc: "Reconstruction de la présence visuelle et digitale du cabinet pour mieux refléter la crédibilité, l'expérience et la confiance des clients.",
+        work3_type: "Suivi des dépenses",
+        work3_headline: "Visibilité et contrôle simplifiés pour les flux financiers",
+        work3_desc: "Conception d'une expérience de dépenses plus claire pour améliorer les rapports, l'utilisabilité et le contrôle quotidien.",
+        s06_label: "Systèmes digitaux que nous développons — 06",
+        sys1_name: "Génération automatique de documents",
+        sys1_desc: "Réduisez l'administration manuelle répétitive avec des devis, résumés et documents clients plus rapides.",
+        sys2_name: "Tableaux de bord et suivi clients",
+        sys2_desc: "Donnez aux clients une vue claire de ce qui est en cours, de ce qui est fait et de ce qui vient ensuite.",
+        sys3_name: "Outils opérationnels et flux de travail internes",
+        sys3_desc: "Réduisez les frictions dans la livraison, la communication et le suivi.",
+        sys4_name: "Portails et interfaces de service",
+        sys4_desc: "Améliorez la visibilité, la confiance et la coordination quotidienne grâce à de meilleurs systèmes orientés clients.",
+        s07_label: "Comment nous travaillons — 07",
+        s07_intro: "Direct, structuré et focalisé sur ce qui fait avancer les choses.",
+        step1_label: "Comprendre",
+        step1_desc: "Nous examinons l'entreprise, la présence digitale et les points de friction.",
+        step2_label: "Cadrer",
+        step2_desc: "Nous définissons la bonne réponse : site web, couche produit ou refonte système.",
+        step3_label: "Concevoir et construire",
+        step3_desc: "Nous transformons cela en quelque chose d'utilisable, de crédible et d'opérationnellement pertinent.",
+        step4_label: "Affiner",
+        step4_desc: "Une fois les fondations correctes, nous améliorons ce qui compte ensuite.",
+        s08_label: "Conçu pour les secteurs techniques — 08",
+        s08_intro: "LMSK travaille mieux avec des entreprises dont les services sont complexes, à haute confiance et mal servis par les modèles digitaux génériques.",
+        ind1_label: "Énergie",
+        ind1_desc: "Des systèmes digitaux qui soutiennent la confiance, la clarté et l'action autour des décisions importantes.",
+        ind2_label: "Construction",
+        ind2_desc: "Une crédibilité digitale renforcée là où le processus et la fiabilité doivent être visibles.",
+        ind3_label: "Industrie",
+        ind3_desc: "Des interfaces structurées construites avec précision, logique et retenue.",
+        s09_label: "Fondé par des praticiens — 09",
+        s09_intro: "LMSK est dirigé par deux fondateurs aux forces complémentaires en matière de produit, de design et d'exécution.",
+        founder1_title: "Co-Fondatrice",
+        founder1_desc: "Directrice créative travaillant sur la structure, la cohérence visuelle et la livraison.",
+        founder2_title: "Co-Fondateur",
+        founder2_desc: "Product Designer senior avec plus de 10 ans d'expérience en agence, fintech et entreprises de services.",
+        s10_label: "Ce que valorisent les clients — 10",
+        principle1_label: "Clarté<span>:</span>",
+        principle1_desc: "Pensée claire, structure claire et résultats clairs.",
+        principle2_label: "Précision<span>:</span>",
+        principle2_desc: "Un travail ancré dans la logique, pas dans le bruit.",
+        principle3_label: "Responsabilité<span>:</span>",
+        principle3_desc: "Collaboration directe et progrès visibles.",
+        principle4_label: "Pertinence<span>:</span>",
+        principle4_desc: "Un travail digital lié aux vrais besoins opérationnels, pas au théâtre d'agence.",
+        final_headline: "Commencez par un diagnostic ciblé",
+        final_body: "Une première conversation directe pour identifier là où des systèmes digitaux plus solides peuvent créer le plus de valeur.",
+        final_cta: "Prendre rendez-vous",
+        final_tagline: "La clarté d'abord. La direction ensuite.",
+      },
+      de: {
+        nav_work: "Arbeit",
+        nav_process: "Prozess",
+        nav_book: "Diagnose buchen",
+        hero_headline: 'Wir entwerfen und entwickeln digitale Systeme für\n<span style="color:var(--accent)">Vertrauen, Conversion</span> und\n<span style="color:var(--accent)">Wachstum.</span>',
+        hero_body: "LMSK entwirft und entwickelt Websites, Kundensysteme und operative Tools für vertrauensbasierte Unternehmen und etablierte Marken.",
+        hero_cta: "Diagnose buchen",
+        hero_tagline: "Fokussiert, erfahren und auf echten Geschäftsbedarf ausgerichtet.",
+        manifesto_line1: "Keine Volumen-Agentur.<br />Kein generischer Anbieter.",
+        manifesto_line2: "Ein erfahrener digitaler Partner für klarere Positionierung, stärkere Systeme und bessere Ergebnisse.",
+        s02_label: "Was das löst — 02",
+        s02_intro: "Der Wert liegt nicht nur in dem, was gebaut wird. Er liegt darin, was danach klarer, schneller und einfacher wird.",
+        s02_t1: "1. Schwaches digitales Vertrauen",
+        s02_d1: "Bei hochwertigen Dienstleistungen erzeugt eine schwache Präsentation Zögerlichkeit, bevor ein Gespräch überhaupt beginnt.",
+        s02_t2: "2. Unklare Angebote",
+        s02_d2: "Wenn Dienstleistungen online schwer verständlich sind, zögern gute Interessenten, vergleichen oder springen ab.",
+        s02_t3: "3. Zu viel manuelle Nachverfolgung",
+        s02_d3: "Wiederholte Erklärungen, Projektaktualisierungen und Dokumentenvorbereitung verbrauchen Zeit, die nicht manuell bleiben sollte.",
+        s02_t4: "4. Geringe Transparenz während der Umsetzung",
+        s02_d4: "Wenn Kunden nicht klar sehen können, was passiert, sinkt das Vertrauen und die Kommunikationslast steigt.",
+        s03_label: "Was wir tun — 03",
+        s03_intro: "Wir arbeiten an der digitalen Schicht rund um ein Unternehmen: wie es wahrgenommen wird, wie es verstanden wird, wie Menschen damit interagieren und wie Teams es intern nutzen.",
+        s03_t1: "1. Webdesign und Conversion-Struktur",
+        s03_d1: "Websites, die Klarheit, Vertrauen und Entscheidungsfindung für hochwertige Dienstleistungen verbessern.",
+        s03_t2: "2. Markensysteme und digitale Identität",
+        s03_d2: "Visuelle und strukturelle Systeme, die ein Unternehmen so glaubwürdig erscheinen lassen, wie es tatsächlich ist.",
+        s03_t3: "3. Digitale Produkte und Kundensysteme",
+        s03_d3: "Angebotsgeneratoren, Dashboards, Dokumentautomatisierung und Tracking-Tools, um Reibung zu reduzieren, Transparenz zu verbessern und bessere Umsetzung zu unterstützen.",
+        s03_t4: "4. Social-Media-Systeme und Kampagnenmaterialien",
+        s03_d4: "Strukturierte Content-Systeme, die digitale Präsenz, Konsistenz und Vertrauen über Zeit stärken.",
+        s03_t5: "5. Videoproduktion und Motion Content",
+        s03_d5: "Marken-, Produkt- und Fallstudie-Videos, die Angebote klarer erklären und Vertrauen stärken.",
+        s03_t6: "6. Automatisierung und Workflow-Unterstützung",
+        s03_d6: "Verbundene Systeme, die manuelle Arbeit in Vertrieb, Service und Nachverfolgung reduzieren.",
+        s04_label: "Warum LMSK — 04",
+        s04_p1: "Wir trennen Design nicht von operativer Logik.",
+        s04_p2: "Die Arbeit dreht sich nicht nur darum, wie etwas aussieht. Sie dreht sich darum, wie ein Unternehmen online verstanden wird, wie Vertrauen aufgebaut wird und wie interne Tools bessere Umsetzung unterstützen.",
+        s04_p3: "Deshalb kann das Ergebnis eine Website, ein Dashboard, eine Automatisierungsschicht, ein Dokumentensystem oder ein klareres Kundenerlebnis von Anfang bis Ende sein.",
+        s04_proof1_label: "Senior",
+        s04_proof1_desc: "Direkte Zusammenarbeit mit erfahrenen Gründern.",
+        s04_proof2_label: "Strukturiert",
+        s04_proof2_desc: "Klarer Umfang, klare Logik und klare Entscheidungen.",
+        s04_proof3_label: "Produktorientiert",
+        s04_proof3_desc: "Gebaut rund um Nutzung, Ablauf und Leistung — nicht Dekoration.",
+        s05_label: "Ausgewählte Arbeiten — 05",
+        work1_type: "Krypto-Handelsplattform",
+        work1_headline: "Produktklarheit für ein vertrauenssensibles Umfeld",
+        work1_desc: "Entwicklung einer klareren und strukturierteren Plattformerfahrung zur Unterstützung von Vertrauen, Benutzerfreundlichkeit und besserer Entscheidungsfindung.",
+        work2_type: "Branding & Website",
+        work2_headline: "Eine stärkere digitale Präsenz für eine etablierte Kanzlei",
+        work2_desc: "Neuaufbau der visuellen und digitalen Präsenz der Kanzlei, um Glaubwürdigkeit, Erfahrung und Kundenvertrauen besser widerzuspiegeln.",
+        work3_type: "Ausgabenverfolgung",
+        work3_headline: "Einfachere Transparenz und Kontrolle für Finanzprozesse",
+        work3_desc: "Entwicklung einer klareren Ausgabenerfahrung zur Verbesserung von Berichterstattung, Benutzerfreundlichkeit und täglicher Kontrolle.",
+        s06_label: "Digitale Systeme, die wir bauen — 06",
+        sys1_name: "Automatische Dokumentenerstellung",
+        sys1_desc: "Reduzieren Sie wiederholte manuelle Verwaltung mit schnelleren Angeboten, Zusammenfassungen und Kundendokumenten.",
+        sys2_name: "Kunden-Dashboards und Tracking",
+        sys2_desc: "Geben Sie Kunden eine klare Übersicht über das, was in Bearbeitung, abgeschlossen und als nächstes kommt.",
+        sys3_name: "Operative Tools und interne Workflows",
+        sys3_desc: "Reduzieren Sie Reibung in Lieferung, Kommunikation und Nachverfolgung.",
+        sys4_name: "Portale und Service-Schnittstellen",
+        sys4_desc: "Verbessern Sie Transparenz, Vertrauen und tägliche Koordination durch bessere kundenseitige Systeme.",
+        s07_label: "Wie wir arbeiten — 07",
+        s07_intro: "Direkt, strukturiert und fokussiert auf das, was vorwärtsbringt.",
+        step1_label: "Verstehen",
+        step1_desc: "Wir betrachten das Unternehmen, die digitale Präsenz und die Reibungspunkte.",
+        step2_label: "Rahmen",
+        step2_desc: "Wir definieren die richtige Antwort: Website, Produktschicht oder Systemüberarbeitung.",
+        step3_label: "Entwerfen und bauen",
+        step3_desc: "Wir machen daraus etwas Nutzbares, Glaubwürdiges und operativ Relevantes.",
+        step4_label: "Verfeinern",
+        step4_desc: "Wenn das Fundament stimmt, verbessern wir, was als nächstes wichtig ist.",
+        s08_label: "Für technische Branchen gebaut — 08",
+        s08_intro: "LMSK arbeitet am besten mit Unternehmen, deren Dienstleistungen komplex, vertrauensbasiert und durch generische digitale Templates schlecht bedient werden.",
+        ind1_label: "Energie",
+        ind1_desc: "Digitale Systeme, die Vertrauen, Klarheit und Handeln bei wichtigen Entscheidungen unterstützen.",
+        ind2_label: "Bau",
+        ind2_desc: "Stärkere digitale Glaubwürdigkeit, wo Prozess und Zuverlässigkeit sichtbar sein müssen.",
+        ind3_label: "Industrie",
+        ind3_desc: "Strukturierte Schnittstellen, gebaut mit Präzision, Logik und Zurückhaltung.",
+        s09_label: "Von Praktikern gegründet — 09",
+        s09_intro: "LMSK wird von zwei Gründern mit ergänzenden Stärken in Produkt, Design und Umsetzung geleitet.",
+        founder1_title: "Mitgründerin",
+        founder1_desc: "Creative Director mit Schwerpunkt auf Struktur, visuelle Konsistenz und Umsetzung.",
+        founder2_title: "Mitgründer",
+        founder2_desc: "Senior Product Designer mit 10+ Jahren Erfahrung in Agentur-, Fintech- und Dienstleistungsumgebungen.",
+        s10_label: "Was Kunden schätzen — 10",
+        principle1_label: "Klarheit<span>:</span>",
+        principle1_desc: "Klares Denken, klare Struktur und klare Ergebnisse.",
+        principle2_label: "Präzision<span>:</span>",
+        principle2_desc: "Arbeit, die in Logik gründet, nicht in Lärm.",
+        principle3_label: "Verantwortlichkeit<span>:</span>",
+        principle3_desc: "Direkte Zusammenarbeit und sichtbarer Fortschritt.",
+        principle4_label: "Relevanz<span>:</span>",
+        principle4_desc: "Digitale Arbeit, die an realen operativen Bedürfnissen ausgerichtet ist, nicht an Agentureitelkeit.",
+        final_headline: "Beginnen Sie mit einer gezielten Diagnose",
+        final_body: "Ein direktes erstes Gespräch, um zu identifizieren, wo stärkere digitale Systeme den größten Wert schaffen können.",
+        final_cta: "Diagnose buchen",
+        final_tagline: "Klarheit zuerst. Richtung als nächstes.",
+      },
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("lang", lang); } catch(e) {}
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.lang === lang);
+      });
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key] !== undefined) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const key = el.dataset.i18nHtml;
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+    }
+
+    // ── Init ─────────────────────────────────────────────────────────────────
+    (function () {
+      let savedLang = "en";
+      try { savedLang = localStorage.getItem("lang") || "en"; } catch(e) {}
+      if (!translations[savedLang]) savedLang = "en";
+      setLanguage(savedLang);
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+      });
+    })();
+
+    // ── Scroll / reveal / parallax ───────────────────────────────────────────
     document.addEventListener("DOMContentLoaded", () => {
       const revealElements = document.querySelectorAll(".reveal-up");
       const revealObserver = new IntersectionObserver(
