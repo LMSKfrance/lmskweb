@@ -320,7 +320,7 @@
         .work-row { grid-column: 1 / 13; display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gap); align-items: center; padding: 6vw 0; position: relative;}
         .work-metric { font-size: clamp(3rem, 6vw, 6rem); font-weight: 500; letter-spacing: -0.04em; }
         .work-content { display: flex; flex-direction: column; gap: 12px; z-index: 2; }
-        .work-placeholder { position: absolute; height: 120%; width: 40%; top: -10%; z-index: 1; pointer-events: none;}
+        .work-placeholder { position: absolute; height: 120%; width: 40%; top: -10%; z-index: 1; pointer-events: none; display: block; object-fit: contain; background-color: var(--bg-light); }
 
         .work-row:nth-child(even) .work-metric-col { grid-column: 1 / 5; }
         .work-row:nth-child(even) .work-content-col { grid-column: 7 / 12; }
@@ -523,40 +523,46 @@
 
 
             <div class="work-row border-t">
-                <div class="work-placeholder placeholder-block" data-speed="0.5"></div>
+                <img src="/arc.jpg" class="work-placeholder placeholder-block" data-speed="0.5" alt="ARC project">
                 <div class="work-metric-col parallax-container" data-speed="0.7">
-                    <div class="work-metric" data-counter="-40">−0%</div>
+                    <div class="work-metric">ARC</div>
+                    <div class="work-desc">
+                        <div class="text-mono">RYPTO TRADING</div>
+                        <div class="text-body-large font-bold">Crypto Trading Platform — Built for Trust and Clarity</div>
+                        <div class="text-body">Secure, transparent trading flows and clear decision points to improve user confidence.</div>
+                    </div>
                 </div>
                 <div class="work-content-col work-content parallax-container" data-speed="1.0">
-                    <div class="text-mono">Task time</div>
-                    <div class="text-body-large font-bold">CRM redesign for a service operation.</div>
-                    <div class="text-body">Redesigned a CRM workflow to reduce operational friction.</div>
                 </div>
             </div>
 
 
             <div class="work-row border-t">
-                <div class="work-placeholder placeholder-block" data-speed="0.5"></div>
+                <img src="/ag-legal.jpg" class="work-placeholder placeholder-block" data-speed="0.5" alt="AG Legal Georgia project">
                 <div class="work-metric-col parallax-container" data-speed="0.7">
-                    <div class="work-metric">Adoption</div>
+                    <div class="work-metric">AG Legal Georgia</div>
+                    <div class="work-desc">
+                        <div class="text-mono">Branding & Website</div>
+                        <div class="text-body-large font-bold">AG Legal Georgia — A law firm with 25+ years of experience</div>
+                        <div class="text-body">Full branding and website work to reflect decades of legal practice, credibility and client trust.</div>
+                    </div>
                 </div>
                 <div class="work-content-col work-content parallax-container" data-speed="1.0">
-                    <div class="text-mono">Product Design</div>
-                    <div class="text-body-large font-bold">Fintech &amp; insurtech structure.</div>
-                    <div class="text-body">Trust, structure and clarity shaped adoption and usability. User journeys, interface systems, decision flows.</div>
                 </div>
             </div>
 
 
             <div class="work-row border-t border-b">
-                <div class="work-placeholder placeholder-block" data-speed="0.5"></div>
+                <img src="/econome.jpg" class="work-placeholder placeholder-block" data-speed="0.5" alt="Econome project">
                 <div class="work-metric-col parallax-container" data-speed="0.7">
-                    <div class="work-metric" data-counter="100">+0%</div>
+                    <div class="work-metric">Econome</div>
+                    <div class="work-desc">
+                        <div class="text-mono">Expense Tracking</div>
+                        <div class="text-body-large font-bold">Econome — Expense Tracking with Clarity and Control</div>
+                        <div class="text-body">Simplified expense workflows and clearer reporting that help teams manage spend with confidence.</div>
+                    </div>
                 </div>
                 <div class="work-content-col work-content parallax-container" data-speed="1.0">
-                    <div class="text-mono">B2B Conversion</div>
-                    <div class="text-body-large font-bold">Web and digital systems for service businesses.</div>
-                    <div class="text-body">Stronger digital credibility and clearer interaction paths.</div>
                 </div>
             </div>
         </div>
